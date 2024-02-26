@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnbxlrmr6hpvy"]
+
+[ext_resource type="PackedScene" uid="uid://c8ktmx62ljsp1" path="res://Assets/Life/Default.tscn" id="1_hleku"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wafpo"]
+size = Vector2(1152, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb6ys"]
+size = Vector2(24, 512)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ib81q"]
+size = Vector2(16, 512)
+
+[node name="World" type="Node2D"]
+
+[node name="Map" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map"]
+position = Vector2(576, 526)
+shape = SubResource("RectangleShape2D_wafpo")
+
+[node name="Panel" type="Panel" parent="Map/CollisionShape2D"]
+offset_left = -576.0
+offset_top = -14.0
+offset_right = 576.0
+offset_bottom = 16.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Map"]
+position = Vector2(12, 256)
+shape = SubResource("RectangleShape2D_eb6ys")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Map"]
+position = Vector2(1144, 256)
+shape = SubResource("RectangleShape2D_ib81q")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 216)
+
+[node name="Player" parent="." instance=ExtResource("1_hleku")]
+position = Vector2(136, 272)

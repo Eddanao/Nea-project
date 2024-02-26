@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=3 uid="uid://di70fm6n0x07g"]
+
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_yt17t"]
+
+[node name="Screen" type="Node2D"]
+position = Vector2(10, 115)
+script = ExtResource("1_yt17t")
+
+[node name="Menu" type="Panel" parent="."]
+offset_left = 310.0
+offset_top = -51.0
+offset_right = 822.0
+offset_bottom = 401.0
+
+[node name="End" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 770.0
+offset_top = 552.0
+offset_right = 889.0
+offset_bottom = 583.0
+text = "Exit game
+"
+
+[node name="Play" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 8.0
+offset_right = 376.0
+offset_bottom = 96.0
+text = "Play
+"
+
+[node name="Credits" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 184.0
+offset_right = 368.0
+offset_bottom = 272.0
+text = "Credits"
+
+[node name="Settings" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 328.0
+offset_right = 368.0
+offset_bottom = 408.0
+text = "Settings
+"
+
+[node name="Creditmenu" type="Panel" parent="."]
+visible = false
+offset_left = 118.0
+offset_top = -11.0
+offset_right = 270.0
+offset_bottom = 325.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Creditmenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053
+anchor_top = 0.024
+anchor_right = 0.053
+anchor_bottom = 0.024
+offset_left = -0.0560007
+offset_top = -0.0640001
+offset_right = 135.944
+offset_bottom = 319.936
+text = "Credits:
+made by ed"
+
+[connection signal="pressed" from="Menu/End" to="." method="_on_end_pressed"]
+[connection signal="pressed" from="Menu/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/Credits" to="." method="_on_credits_pressed"]
